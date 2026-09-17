@@ -6,7 +6,6 @@ export default function Hero() {
     <section className="relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid min-h-[calc(100vh-73px)] items-center py-16 lg:grid-cols-12 lg:gap-12 lg:py-20">
-          {/* Main content */}
           <div className="lg:col-span-8">
             <div className="mb-8 flex items-center gap-3">
               <span className="h-2 w-2 rounded-full bg-[var(--primary)]" />
@@ -19,9 +18,7 @@ export default function Hero() {
             <h1 className="max-w-5xl text-[clamp(3.5rem,8vw,8.5rem)] font-semibold leading-[0.88] tracking-[-0.065em] text-[var(--foreground)]">
               I build
               <br />
-              <span className="text-[var(--primary)]">
-                digital
-              </span>{" "}
+              <span className="text-[var(--primary)]">digital</span>{" "}
               experiences.
             </h1>
 
@@ -41,13 +38,13 @@ export default function Hero() {
 
                   <ArrowUpRight
                     size={16}
-                    className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    className="text-white transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                   />
                 </Link>
 
                 <Link
                   href="/about"
-                  className="inline-flex items-center rounded-full border border-[var(--border)] px-5 py-3 text-sm font-medium text-[var(--foreground)] transition-colors hover:border-[var(--primary)] hover:text-[var(--primary)]"
+                  className="inline-flex items-center rounded-full border border-[var(--primary)] bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-[var(--primary-light)]"
                 >
                   About me
                 </Link>
@@ -55,13 +52,10 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Visual */}
           <div className="relative mt-16 hidden lg:col-span-4 lg:mt-0 lg:block">
             <div className="relative mx-auto aspect-square max-w-sm">
               <div className="absolute inset-0 rounded-full border border-[var(--border)]" />
-
               <div className="absolute inset-8 rounded-full border border-[var(--border)]" />
-
               <div className="absolute inset-16 rounded-full bg-[var(--primary)]" />
 
               <div className="absolute inset-0 flex items-center justify-center">
@@ -93,7 +87,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Bottom information */}
         <div className="border-t border-[var(--border)] py-5">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-8">
