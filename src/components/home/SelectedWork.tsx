@@ -23,7 +23,7 @@ export default function SelectedWork() {
         </div>
 
         <Link
-          href="/projects"
+          href="/project"
           className="group inline-flex w-fit items-center gap-2 text-sm font-medium text-[var(--foreground)] transition-colors hover:text-[var(--primary)]"
         >
           View all projects
