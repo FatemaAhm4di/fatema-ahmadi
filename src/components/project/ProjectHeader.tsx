@@ -1,4 +1,4 @@
-export default function ProjectsHeader() {
+export default function ProjectHeader() {
   return (
     <header className="border-b border-[var(--border)] pb-10">
       <p className="text-sm font-medium uppercase tracking-[0.2em] text-[var(--primary)]">

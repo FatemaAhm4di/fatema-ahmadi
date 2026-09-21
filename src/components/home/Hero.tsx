@@ -55,7 +55,9 @@ export default function Hero() {
           <div className="relative mt-16 hidden lg:col-span-4 lg:mt-0 lg:block">
             <div className="relative mx-auto aspect-square max-w-sm">
               <div className="absolute inset-0 rounded-full border border-[var(--border)]" />
+
               <div className="absolute inset-8 rounded-full border border-[var(--border)]" />
+
               <div className="absolute inset-16 rounded-full bg-[var(--primary)]" />
 
               <div className="absolute inset-0 flex items-center justify-center">

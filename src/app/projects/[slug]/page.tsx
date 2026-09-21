@@ -103,6 +103,7 @@ export default async function ProjectPage({
                     className="flex gap-4 border-b border-[var(--border)] pb-4 text-sm leading-7 text-[var(--muted)]"
                   >
                     <span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--primary)]" />
+
                     <span>{highlight}</span>
                   </li>
                 ))}
