@@ -9,7 +9,6 @@ export type Project = {
   slug: string;
   featured: boolean;
   liveUrl?: string;
-
   year?: string;
   role?: string;
   overview?: string;
