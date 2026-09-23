@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { notFound } from "next/navigation";
 
@@ -78,8 +80,22 @@ export default async function ProjectPage({
         </div>
       </header>
 
+      {/* Project Preview */}
+      <section className="py-14">
+        <div className="relative aspect-video overflow-hidden border border-[var(--border)] bg-[var(--surface-muted)]">
+          <Image
+            src={project.image}
+            alt={`${project.title} project preview`}
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, 1280px"
+            className="object-cover"
+          />
+        </div>
+      </section>
+
       {/* Project Content */}
-      <div className="grid gap-16 py-14 lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-24">
+      <div className="grid gap-16 pb-14 lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-24">
         {/* Main Content */}
         <div className="max-w-3xl">
           {project.overview && (

@@ -8,6 +8,7 @@ export type Project = {
   technologies: string[];
   slug: string;
   featured: boolean;
+  image: string;
   liveUrl?: string;
   year?: string;
   role?: string;
