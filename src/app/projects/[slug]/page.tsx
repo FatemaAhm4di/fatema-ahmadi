@@ -81,18 +81,21 @@ export default async function ProjectPage({
       </header>
 
       {/* Project Preview */}
-      <section className="py-14">
-        <div className="relative aspect-video overflow-hidden border border-[var(--border)] bg-[var(--surface-muted)]">
-          <Image
-            src={project.image}
-            alt={`${project.title} project preview`}
-            fill
-            priority
-            sizes="(max-width: 768px) 100vw, 1280px"
-            className="object-cover"
-          />
-        </div>
-      </section>
+<section className="py-12">
+  <div className="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] p-3 sm:p-4">
+    <div className="relative overflow-hidden rounded-xl bg-[var(--surface)]">
+      <Image
+        src={project.image}
+        alt={`${project.title} project preview`}
+        width={1600}
+        height={1000}
+        priority
+        sizes="(max-width: 768px) 100vw, 1024px"
+        className="h-auto w-full object-contain"
+      />
+    </div>
+  </div>
+</section>
 
       {/* Project Content */}
       <div className="grid gap-16 pb-14 lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-24">
