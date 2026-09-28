@@ -42,6 +42,11 @@ textarea {
 
 button {
   cursor: pointer;
+  color: var(--surface);
+}
+
+button svg {
+  color: currentColor;
 }
 
 ::selection {

@@ -8,7 +8,10 @@ export default function Hero() {
         <div className="grid min-h-[calc(100vh-73px)] items-center py-16 lg:grid-cols-12 lg:gap-12 lg:py-20">
           <div className="lg:col-span-8">
             <div className="mb-8 flex items-center gap-3">
-              <span className="h-2 w-2 rounded-full bg-[var(--primary)]" />
+              <span
+                className="h-2 w-2 rounded-full bg-[var(--primary)]"
+                aria-hidden="true"
+              />
 
               <p className="text-xs font-medium uppercase tracking-[0.2em] text-[var(--muted)]">
                 Frontend Developer
@@ -29,24 +32,25 @@ export default function Hero() {
                 simple to use.
               </p>
 
-              <div className="flex items-center gap-3">
+              <div className="flex flex-wrap items-center gap-3">
                 <Link
                   href="/projects"
-                  className="group inline-flex items-center gap-2 rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-[var(--primary-light)]"
+                  className="group inline-flex items-center gap-2 rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium !text-white transition-colors hover:bg-[var(--primary-light)]"
                 >
-                  View my work
+                  <span className="text-white">View my work</span>
 
                   <ArrowUpRight
                     size={16}
-                    className="text-white transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    aria-hidden="true"
+                    className="shrink-0 text-white transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                   />
                 </Link>
 
                 <Link
                   href="/about"
-                  className="inline-flex items-center rounded-full border border-[var(--primary)] bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-[var(--primary-light)]"
+                  className="inline-flex items-center rounded-full border border-[var(--primary)] bg-[var(--primary)] px-5 py-3 text-sm font-medium !text-white transition-colors hover:bg-[var(--primary-light)]"
                 >
-                  About me
+                  <span className="text-white">About me</span>
                 </Link>
               </div>
             </div>
@@ -123,6 +127,7 @@ export default function Hero() {
 
               <ArrowDown
                 size={14}
+                aria-hidden="true"
                 className="transition-transform duration-200 group-hover:translate-y-1"
               />
             </Link>
