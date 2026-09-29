@@ -1,5 +1,4 @@
 import Link from "next/link";
-
 import { ArrowUpRight } from "lucide-react";
 
 import { projects } from "@/data/project";
@@ -84,9 +83,13 @@ export default function ProjectGrid({
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`View ${project.title} live project`}
-                      className="relative z-20 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[var(--primary)] text-white transition-all duration-200 hover:bg-[var(--primary-light)] group-hover:translate-x-1"
+                      className="relative z-20 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[var(--primary)] !text-white transition-all duration-200 hover:bg-[var(--primary-light)] group-hover:translate-x-1"
                     >
-                      <ArrowUpRight size={17} />
+                      <ArrowUpRight
+                        size={17}
+                        aria-hidden="true"
+                        className="!text-white"
+                      />
                     </a>
                   )}
                 </div>

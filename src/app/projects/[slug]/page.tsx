@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { notFound } from "next/navigation";
 
@@ -16,7 +15,6 @@ export default async function ProjectPage({
   params,
 }: ProjectPageProps) {
   const { slug } = await params;
-
   const project = projects.find((item) => item.slug === slug);
 
   if (!project) {
@@ -32,6 +30,7 @@ export default async function ProjectPage({
       >
         <ArrowLeft
           size={16}
+          aria-hidden="true"
           className="transition-transform duration-200 group-hover:-translate-x-1"
         />
         Back to projects
@@ -67,13 +66,14 @@ export default async function ProjectPage({
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex w-fit shrink-0 items-center gap-2 rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-[var(--primary-light)]"
+              className="group inline-flex w-fit shrink-0 items-center gap-2 rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium !text-white transition-colors hover:bg-[var(--primary-light)]"
             >
-              Visit project
+              <span className="!text-white">Visit project</span>
 
               <ArrowUpRight
                 size={16}
-                className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                aria-hidden="true"
+                className="!text-white transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               />
             </a>
           )}
@@ -81,21 +81,21 @@ export default async function ProjectPage({
       </header>
 
       {/* Project Preview */}
-<section className="py-12">
-  <div className="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] p-3 sm:p-4">
-    <div className="relative overflow-hidden rounded-xl bg-[var(--surface)]">
-      <Image
-        src={project.image}
-        alt={`${project.title} project preview`}
-        width={1600}
-        height={1000}
-        priority
-        sizes="(max-width: 768px) 100vw, 1024px"
-        className="h-auto w-full object-contain"
-      />
-    </div>
-  </div>
-</section>
+      <section className="py-12">
+        <div className="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] p-3 sm:p-4">
+          <div className="relative overflow-hidden rounded-xl bg-[var(--surface)]">
+            <Image
+              src={project.image}
+              alt={`${project.title} project preview`}
+              width={1600}
+              height={1000}
+              priority
+              sizes="(max-width: 768px) 100vw, 1024px"
+              className="h-auto w-full object-contain"
+            />
+          </div>
+        </div>
+      </section>
 
       {/* Project Content */}
       <div className="grid gap-16 pb-14 lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-24">
@@ -190,8 +190,10 @@ export default async function ProjectPage({
         >
           <ArrowLeft
             size={16}
+            aria-hidden="true"
             className="transition-transform duration-200 group-hover:-translate-x-1"
           />
+
           View all projects
         </Link>
       </div>

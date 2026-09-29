@@ -4,7 +4,9 @@ import type { ProjectCategory } from "@/types/project";
 
 type ProjectsFiltersProps = {
   activeCategory: "All" | ProjectCategory;
-  onCategoryChange: (category: "All" | ProjectCategory) => void;
+  onCategoryChange: (
+    category: "All" | ProjectCategory
+  ) => void;
 };
 
 const categories: Array<"All" | ProjectCategory> = [
@@ -28,13 +30,22 @@ export default function ProjectsFilters({
             key={category}
             type="button"
             onClick={() => onCategoryChange(category)}
-            className={`rounded-full border px-4 py-2 text-xs font-medium transition-all duration-200 ${
+            aria-pressed={isActive}
+            className={`group rounded-full border px-5 py-2.5 text-xs font-medium transition-all duration-200 ${
               isActive
-                ? "border-[var(--primary)] bg-[var(--primary)] text-white"
-                : "border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:border-[var(--primary-light)] hover:text-[var(--primary)]"
+                ? "border-[var(--primary)] bg-[var(--primary)]"
+                : "border-[var(--border)] bg-[var(--surface)] hover:border-[var(--primary)] hover:bg-[var(--primary)]"
             }`}
           >
-            {category}
+            <span
+              className={`transition-colors duration-200 ${
+                isActive
+                  ? "!text-white"
+                  : "text-[var(--foreground)] group-hover:!text-white"
+              }`}
+            >
+              {category}
+            </span>
           </button>
         );
       })}

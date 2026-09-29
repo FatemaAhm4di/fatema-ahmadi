@@ -84,7 +84,11 @@ export default function AboutPage() {
         </div>
 
         <div className="mt-16 flex items-center gap-3 border-t border-[var(--border)] pt-6 text-xs font-medium uppercase tracking-[0.16em] text-[var(--muted)] sm:mt-20">
-          <ArrowDownRight size={16} className="text-[var(--primary)]" />
+          <ArrowDownRight
+            size={16}
+            className="text-[var(--primary)]"
+            aria-hidden="true"
+          />
           <span>Development · Design · Data</span>
         </div>
       </section>
@@ -148,6 +152,7 @@ export default function AboutPage() {
           <Sparkles
             size={22}
             strokeWidth={1.5}
+            aria-hidden="true"
             className="hidden text-[var(--primary)] sm:block"
           />
         </div>
@@ -163,7 +168,11 @@ export default function AboutPage() {
               >
                 <div className="flex items-start justify-between gap-6">
                   <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--surface-muted)] text-[var(--primary)] transition-colors duration-300 group-hover:bg-[var(--primary)] group-hover:text-white">
-                    <Icon size={19} strokeWidth={1.7} />
+                    <Icon
+                      size={19}
+                      strokeWidth={1.7}
+                      aria-hidden="true"
+                    />
                   </div>
 
                   <span className="text-xs font-medium tabular-nums text-[var(--muted)]">
@@ -248,6 +257,7 @@ export default function AboutPage() {
                     <BarChart3
                       size={18}
                       strokeWidth={1.6}
+                      aria-hidden="true"
                       className="text-[var(--primary)] opacity-70 transition-opacity duration-200 group-hover:opacity-100"
                     />
                   </div>
@@ -342,13 +352,14 @@ export default function AboutPage() {
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/projects"
-                className="group inline-flex items-center gap-2 rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white transition-colors duration-200 hover:bg-[var(--primary-light)]"
+                className="group inline-flex items-center gap-2 rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-medium !text-white transition-colors duration-200 hover:bg-[var(--primary-light)]"
               >
-                View projects
+                <span className="!text-white">View projects</span>
 
                 <ArrowUpRight
                   size={16}
-                  className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  aria-hidden="true"
+                  className="!text-white transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                 />
               </Link>
 

@@ -15,7 +15,7 @@ const contactDetails = {
   location: "Afghanistan",
   github: "https://github.com/FatemaAhm4di",
   linkedin:
-    "https://www.linkedin.com/in/fatema-ahmadi-a0a749339?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    "https://www.linkedin.com/safety/go/?url=https%3A%2F%2Flnkd.in%2FgbvwTFYj&urlhash=p-m-&mt=iJeQuUBcJY9C8s4R5AxMjuIB2GWsI9whIX49aUGYkppFAujw8CpXvaOAYo2fcL14T4UDwL-aB92ag0IrH6zxpECu0NvyA1GTKSrO9u1hKs-zp40XuDAiu9ej2s4&isSdui=true&lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BT3kVus2FQ4O6lDJ2CU%2Br9w%3D%3D",
   x: "https://x.com/_Fatema_Ahmadi_?t=BNmpsP9jbPdb6GMh2W4EIg&s=09",
 };
 
@@ -36,7 +36,6 @@ export default function ContactPage() {
 
   return (
     <main>
-      {/* Hero */}
       <section className="mx-auto max-w-7xl px-6 pb-20 pt-16 sm:pb-24 sm:pt-20 lg:px-8 lg:pb-28 lg:pt-28">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-end lg:gap-20">
           <div>
@@ -60,10 +59,8 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Content */}
       <section className="border-y border-[var(--border)] bg-[var(--surface)]">
         <div className="mx-auto grid max-w-7xl gap-14 px-6 py-16 sm:py-20 lg:grid-cols-[300px_minmax(0,1fr)] lg:gap-20 lg:px-8 lg:py-24">
-          {/* Contact Information */}
           <aside>
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--primary)]">
@@ -80,9 +77,9 @@ export default function ContactPage() {
             </div>
 
             <div className="mt-9 space-y-3">
-              {/* Email */}
               <a
                 href={`mailto:${contactDetails.email}`}
+                aria-label="Send me an email"
                 className="group flex items-center gap-4 rounded-2xl border border-[var(--border)] bg-[var(--background)] p-4 transition-all duration-200 hover:border-[var(--primary-light)] hover:bg-[var(--surface-muted)]"
               >
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[var(--surface)] text-[var(--primary)] shadow-sm transition-colors duration-200 group-hover:bg-[var(--primary)] group-hover:text-white">
@@ -94,8 +91,8 @@ export default function ContactPage() {
                     Email
                   </span>
 
-                  <span className="mt-1 block break-all text-sm font-medium text-[var(--foreground)] transition-colors group-hover:text-[var(--primary)]">
-                    {contactDetails.email}
+                  <span className="mt-1 block text-sm font-medium text-[var(--foreground)] transition-colors group-hover:text-[var(--primary)]">
+                    Send me an email
                   </span>
                 </span>
 
@@ -105,7 +102,6 @@ export default function ContactPage() {
                 />
               </a>
 
-              {/* Location */}
               <div className="flex items-center gap-4 rounded-2xl border border-[var(--border)] bg-[var(--background)] p-4">
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[var(--surface)] text-[var(--primary)] shadow-sm">
                   <MapPin size={18} strokeWidth={1.7} />
@@ -123,14 +119,12 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Social Links */}
             <div className="mt-8">
               <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">
                 Social
               </p>
 
               <div className="grid grid-cols-3 gap-3">
-                {/* GitHub */}
                 <a
                   href={contactDetails.github}
                   target="_blank"
@@ -144,12 +138,12 @@ export default function ContactPage() {
                     height="19"
                     fill="currentColor"
                     aria-hidden="true"
+                    className="transition-colors duration-200 group-hover:text-white"
                   >
                     <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.167 6.839 9.49.5.092.682-.217.682-.483 0-.237-.009-.866-.013-1.7-2.782.604-3.369-1.341-3.369-1.341-.455-1.157-1.11-1.466-1.11-1.466-.908-.621.069-.608.069-.608 1.004.071 1.532 1.031 1.532 1.031.892 1.529 2.341 1.087 2.91.831.091-.646.349-1.087.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.272.098-2.65 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0 1 12 6.844a9.56 9.56 0 0 1 2.504.337c1.909-1.294 2.748-1.025 2.748-1.025.546 1.378.203 2.397.1 2.65.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.744 0 .268.18.58.688.481A10.002 10.002 0 0 0 22 12c0-5.523-4.477-10-10-10Z" />
                   </svg>
                 </a>
 
-                {/* LinkedIn */}
                 <a
                   href={contactDetails.linkedin}
                   target="_blank"
@@ -163,12 +157,12 @@ export default function ContactPage() {
                     height="19"
                     fill="currentColor"
                     aria-hidden="true"
+                    className="transition-colors duration-200 group-hover:text-white"
                   >
                     <path d="M5.04 3.5a2.04 2.04 0 1 1 0 4.08 2.04 2.04 0 0 1 0-4.08ZM3.3 9.2h3.48V20H3.3V9.2Zm5.67 0h3.34v1.48h.05c.46-.88 1.6-1.8 3.3-1.8 3.53 0 4.18 2.32 4.18 5.34V20h-3.48v-5.12c0-1.22-.02-2.79-1.7-2.79-1.7 0-1.96 1.33-1.96 2.7V20H8.97V9.2Z" />
                   </svg>
                 </a>
 
-                {/* X */}
                 <a
                   href={contactDetails.x}
                   target="_blank"
@@ -182,6 +176,7 @@ export default function ContactPage() {
                     height="18"
                     fill="currentColor"
                     aria-hidden="true"
+                    className="transition-colors duration-200 group-hover:text-white"
                   >
                     <path d="M18.244 2H21.5l-7.11 8.13L22.75 22h-6.62l-5.18-6.77L5.02 22H1.76l7.61-8.7L1.25 2h6.79l4.68 6.19L18.244 2Zm-1.16 17.87h1.81L7.02 4h-1.94l12.004 15.87Z" />
                   </svg>
@@ -190,7 +185,6 @@ export default function ContactPage() {
             </div>
           </aside>
 
-          {/* Contact Form */}
           <div className="max-w-3xl">
             {isSubmitted ? (
               <div className="flex min-h-[560px] flex-col items-center justify-center rounded-3xl border border-[var(--border)] bg-[var(--background)] px-6 py-16 text-center sm:px-10">
@@ -236,7 +230,6 @@ export default function ContactPage() {
                 </div>
 
                 <div className="grid gap-5 sm:grid-cols-2">
-                  {/* Name */}
                   <div>
                     <label
                       htmlFor="name"
@@ -255,7 +248,6 @@ export default function ContactPage() {
                     />
                   </div>
 
-                  {/* Email */}
                   <div>
                     <label
                       htmlFor="email"
@@ -275,7 +267,6 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Subject */}
                 <div className="mt-5">
                   <label
                     htmlFor="subject"
@@ -294,7 +285,6 @@ export default function ContactPage() {
                   />
                 </div>
 
-                {/* Message */}
                 <div className="mt-5">
                   <label
                     htmlFor="message"
@@ -322,14 +312,17 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="group inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-xl bg-[var(--primary)] px-6 text-sm font-medium text-white shadow-sm transition-all duration-200 hover:bg-[var(--primary-light)] hover:shadow-md disabled:cursor-not-allowed disabled:opacity-60"
+                    className="group inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-xl bg-[var(--primary)] px-6 text-sm font-medium !text-white shadow-sm transition-all duration-200 hover:bg-[var(--primary-light)] hover:shadow-md disabled:cursor-not-allowed disabled:opacity-60"
                   >
-                    {isSubmitting ? "Sending..." : "Send message"}
+                    <span className="text-white">
+                      {isSubmitting ? "Sending..." : "Send message"}
+                    </span>
 
                     {!isSubmitting && (
                       <Send
                         size={15}
-                        className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                        aria-hidden="true"
+                        className="text-white transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                       />
                     )}
                   </button>
@@ -340,7 +333,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Bottom CTA */}
       <section className="mx-auto max-w-7xl px-6 py-20 sm:py-24 lg:px-8 lg:py-28">
         <div className="flex flex-col gap-7 border-t border-[var(--border)] pt-8 sm:flex-row sm:items-center sm:justify-between">
           <div>
@@ -361,7 +353,8 @@ export default function ContactPage() {
 
             <ArrowUpRight
               size={16}
-              className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              aria-hidden="true"
+              className="transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
             />
           </Link>
         </div>
