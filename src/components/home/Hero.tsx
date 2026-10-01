@@ -65,10 +65,10 @@ export default function Hero() {
               <div className="absolute inset-16 rounded-full bg-[var(--primary)]" />
 
               <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-8xl font-semibold tracking-[-0.08em] text-[var(--foreground)]">
-                  FA
-                </span>
-              </div>
+  <span className="text-8xl font-semibold tracking-[-0.08em] text-white">
+    FA
+  </span>
+</div>
 
               <div className="absolute -right-2 top-8 flex h-12 w-12 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--background)]">
                 <span className="text-xs font-semibold text-[var(--primary)]">
