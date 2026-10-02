@@ -114,7 +114,7 @@ export default function Hero() {
                 </p>
 
                 <p className="mt-1 text-xs font-medium text-[var(--foreground)]">
-                  React · Next.js · TypeScript
+                  React · Next.js · TypeScript · SQL · Prisma
                 </p>
               </div>
             </div>
