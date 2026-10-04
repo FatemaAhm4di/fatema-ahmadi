@@ -52,7 +52,6 @@ export default async function ProjectPage({
 
   return (
     <article className="mx-auto max-w-7xl px-6 py-14 sm:py-16 lg:px-8 lg:py-24">
-      {/* Back to projects */}
       <Link
         href="/projects"
         className="group inline-flex items-center gap-2 text-sm font-medium text-[var(--muted)] transition-colors duration-200 hover:text-[var(--primary)]"
@@ -63,15 +62,12 @@ export default async function ProjectPage({
           aria-hidden="true"
           className="transition-transform duration-200 group-hover:-translate-x-1"
         />
-
         <span>Back to projects</span>
       </Link>
 
-      {/* Project Header */}
       <header className="mt-10 border-b border-[var(--border)] pb-10 sm:mt-12 sm:pb-12">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
           <div className="min-w-0 max-w-5xl">
-            {/* Meta */}
             <div className="flex flex-wrap items-center gap-3">
               <span className="rounded-full bg-[var(--surface-muted)] px-3 py-1.5 text-xs font-medium text-[var(--primary)]">
                 {project.category}
@@ -84,18 +80,15 @@ export default async function ProjectPage({
               )}
             </div>
 
-            {/* Title */}
             <h1 className="mt-6 max-w-5xl text-5xl font-semibold tracking-[-0.055em] text-[var(--foreground)] sm:text-6xl lg:text-8xl">
               {project.title}
             </h1>
 
-            {/* Description */}
             <p className="mt-6 max-w-3xl text-base leading-8 text-[var(--muted)] sm:mt-7 sm:text-lg">
               {project.description}
             </p>
           </div>
 
-          {/* Live Project */}
           {project.liveUrl && (
             <a
               href={project.liveUrl}
@@ -119,7 +112,7 @@ export default async function ProjectPage({
         </div>
       </header>
 
-      {/* Project Preview */}
+      {/* Project preview */}
       <section
         className="py-10 sm:py-12"
         aria-label={`${project.title} preview`}
@@ -139,9 +132,8 @@ export default async function ProjectPage({
         </div>
       </section>
 
-      {/* Project Content */}
+      {/* Case study content */}
       <div className="grid min-w-0 gap-14 pb-14 sm:gap-16 lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-24">
-        {/* Main Content */}
         <div className="min-w-0 max-w-3xl">
           {/* Overview */}
           {project.overview && (
@@ -156,6 +148,77 @@ export default async function ProjectPage({
               <p className="mt-5 text-xl leading-9 text-[var(--foreground)] sm:text-2xl">
                 {project.overview}
               </p>
+            </section>
+          )}
+
+          {/* Problem */}
+          {project.problem && (
+            <section
+              className="mt-14 border-t border-[var(--border)] pt-10 sm:mt-16"
+              aria-labelledby="project-problem"
+            >
+              <p
+                id="project-problem"
+                className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--primary)]"
+              >
+                Problem
+              </p>
+
+              <p className="mt-5 text-base leading-8 text-[var(--muted)] sm:text-lg">
+                {project.problem}
+              </p>
+            </section>
+          )}
+
+          {/* Solution */}
+          {project.solution && (
+            <section
+              className="mt-14 border-t border-[var(--border)] pt-10 sm:mt-16"
+              aria-labelledby="project-solution"
+            >
+              <p
+                id="project-solution"
+                className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--primary)]"
+              >
+                Solution
+              </p>
+
+              <p className="mt-5 text-base leading-8 text-[var(--muted)] sm:text-lg">
+                {project.solution}
+              </p>
+            </section>
+          )}
+
+          {/* Features */}
+          {project.features && project.features.length > 0 && (
+            <section
+              className="mt-14 border-t border-[var(--border)] pt-10 sm:mt-16"
+              aria-labelledby="project-features"
+            >
+              <p
+                id="project-features"
+                className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--primary)]"
+              >
+                Key Features
+              </p>
+
+              <ul className="mt-6">
+                {project.features.map((feature, index) => (
+                  <li
+                    key={feature}
+                    className="flex gap-5 border-b border-[var(--border)] py-5 text-sm leading-7 text-[var(--muted)] sm:text-base"
+                  >
+                    <span
+                      className="min-w-6 shrink-0 text-xs font-medium tabular-nums text-[var(--primary)]"
+                      aria-hidden="true"
+                    >
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
             </section>
           )}
 
@@ -191,14 +254,79 @@ export default async function ProjectPage({
               </ul>
             </section>
           )}
+
+          {/* Challenges */}
+          {project.challenges && project.challenges.length > 0 && (
+            <section
+              className="mt-14 border-t border-[var(--border)] pt-10 sm:mt-16"
+              aria-labelledby="project-challenges"
+            >
+              <p
+                id="project-challenges"
+                className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--primary)]"
+              >
+                Challenges
+              </p>
+
+              <ul className="mt-6">
+                {project.challenges.map((challenge, index) => (
+                  <li
+                    key={challenge}
+                    className="flex gap-5 border-b border-[var(--border)] py-5 text-sm leading-7 text-[var(--muted)] sm:text-base"
+                  >
+                    <span
+                      className="min-w-6 shrink-0 text-xs font-medium tabular-nums text-[var(--primary)]"
+                      aria-hidden="true"
+                    >
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+
+                    <span>{challenge}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          {/* Learnings */}
+          {project.learnings && project.learnings.length > 0 && (
+            <section
+              className="mt-14 border-t border-[var(--border)] pt-10 sm:mt-16"
+              aria-labelledby="project-learnings"
+            >
+              <p
+                id="project-learnings"
+                className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--primary)]"
+              >
+                Learnings
+              </p>
+
+              <ul className="mt-6">
+                {project.learnings.map((learning, index) => (
+                  <li
+                    key={learning}
+                    className="flex gap-5 border-b border-[var(--border)] py-5 text-sm leading-7 text-[var(--muted)] sm:text-base"
+                  >
+                    <span
+                      className="min-w-6 shrink-0 text-xs font-medium tabular-nums text-[var(--primary)]"
+                      aria-hidden="true"
+                    >
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+
+                    <span>{learning}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
         </div>
 
-        {/* Project Information */}
+        {/* Project information */}
         <aside
           className="min-w-0 space-y-9 lg:border-l lg:border-[var(--border)] lg:pl-8"
           aria-label="Project information"
         >
-          {/* Role */}
           {project.role && (
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
@@ -211,7 +339,6 @@ export default async function ProjectPage({
             </div>
           )}
 
-          {/* Year */}
           {project.year && (
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
@@ -224,7 +351,6 @@ export default async function ProjectPage({
             </div>
           )}
 
-          {/* Technologies */}
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
               Technologies
@@ -244,7 +370,7 @@ export default async function ProjectPage({
         </aside>
       </div>
 
-      {/* Bottom Navigation */}
+      {/* Project navigation */}
       <nav
         className="border-t border-[var(--border)] pt-8"
         aria-label="Project navigation"

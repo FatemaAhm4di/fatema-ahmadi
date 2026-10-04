@@ -9,9 +9,20 @@ export type Project = {
   slug: string;
   featured: boolean;
   image: string;
+
   liveUrl?: string;
+  githubUrl?: string;
+
   year?: string;
   role?: string;
+
   overview?: string;
+  problem?: string;
+  solution?: string;
+
   highlights?: string[];
+  features?: string[];
+
+  challenges?: string[];
+  learnings?: string[];
 };
