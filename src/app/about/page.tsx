@@ -9,6 +9,9 @@ import {
   Sparkles,
 } from "lucide-react";
 
+import Education from "@/app/about/Education";
+import Experience from "@/app/about/Experience";
+
 const skills = [
   "HTML",
   "CSS",
@@ -135,6 +138,12 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* Experience */}
+      <Experience />
+
+      {/* Education */}
+      <Education />
 
       {/* Focus Areas */}
       <section className="mx-auto max-w-7xl px-6 py-20 sm:py-24 lg:px-8 lg:py-28">
