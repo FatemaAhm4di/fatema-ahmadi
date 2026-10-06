@@ -1,31 +1,62 @@
 const experiences = [
   {
-    period: "2025 – 2026",
+    period: "Mar 2026 – Present",
     role: "Frontend Developer",
-    organization: "Code to Inspire",
+    organization: "Pixel Bridge",
+    location: "Remote",
     description:
-      "Developed frontend projects while working with modern web technologies including React, TypeScript, Next.js, JavaScript, HTML, CSS, and Tailwind CSS.",
+      "Develop and maintain the company's portfolio website as part of a personal brand initiative.",
+    highlights: [
+      "Build responsive, modern web interfaces to effectively showcase the brand's work and services.",
+    ],
   },
   {
-    period: "2025",
+    period: "Mar 2025 – Oct 2025",
     role: "UX/UI Designer",
-    organization: "Remote",
+    organization: "FigPE",
+    location: "Nigeria · Remote",
     description:
-      "Worked on user interface and user experience design, combining visual design skills with a focus on clear and practical digital experiences.",
+      "Worked as part of a 7-member agile team on a productivity platform, focusing on user flows and interface design.",
+    highlights: [
+      "Redesigned user flows, improving task completion rate by 25%.",
+      "Created wireframes, prototypes, and high-fidelity mockups in Figma, reducing revision cycles by 30%.",
+    ],
   },
   {
-    period: "2025",
+    period: "Sep 2025 – Nov 2025",
+    role: "Frontend Developer",
+    organization: "Team Project",
+    location: "Kabul",
+    description:
+      "Developed responsive frontend components for a mobile-first wellness application used by 500+ early users.",
+    highlights: [
+      "Built responsive UI components with HTML, CSS, and JavaScript.",
+      "Implemented dark/light mode and optimized mobile navigation to improve accessibility.",
+    ],
+  },
+  {
+    period: "Apr 2025 – Sep 2025",
     role: "Graphic Design Instructor",
     organization: "OM International Academy",
+    location: "Remote",
     description:
-      "Taught graphic design online and guided students through practical design concepts and tools.",
+      "Taught foundational and advanced graphic design through live virtual sessions for students across 8 countries.",
+    highlights: [
+      "Taught composition, branding, and visual identity to 60+ students.",
+      "Developed course materials and practical assignments focused on job-ready design portfolios.",
+    ],
   },
   {
-    period: "2023 – 2025",
-    role: "Microsoft Office Instructor",
-    organization: "Omid-Herat Academy",
+    period: "Jan 2025 – Apr 2025",
+    role: "Graphic Designer",
+    organization: "Kaaweshgaraan – MegaByte Brand",
+    location: "Remote",
     description:
-      "Taught Microsoft Office and computer skills, helping students build practical digital skills for academic and professional use.",
+      "Created visual and branding materials for software clients while collaborating with cross-functional teams.",
+    highlights: [
+      "Designed brand identities, marketing assets, and digital visuals while maintaining brand consistency.",
+      "Collaborated with cross-functional teams to translate business needs into compelling visual narratives.",
+    ],
   },
 ];
 
@@ -39,12 +70,13 @@ export default function Experience() {
           </p>
 
           <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-[var(--foreground)] sm:text-4xl">
-            Where I&apos;ve worked and learned.
+            Where I&apos;ve worked and contributed.
           </h2>
 
           <p className="mt-5 max-w-sm text-sm leading-7 text-[var(--muted)]">
-            My experience spans frontend development, UI/UX, graphic design,
-            and digital skills education.
+            My professional experience spans frontend development, UX/UI
+            design, graphic design, and digital education across remote and
+            collaborative teams.
           </p>
         </div>
 
@@ -52,24 +84,47 @@ export default function Experience() {
           {experiences.map((experience) => (
             <article
               key={`${experience.role}-${experience.organization}`}
-              className="grid gap-4 py-7 sm:grid-cols-[140px_minmax(0,1fr)] sm:gap-8 sm:py-8"
+              className="grid gap-5 py-8 sm:grid-cols-[150px_minmax(0,1fr)] sm:gap-8"
             >
-              <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--muted)]">
-                {experience.period}
-              </p>
+              <div>
+                <p className="text-xs font-medium uppercase tracking-[0.12em] text-[var(--muted)]">
+                  {experience.period}
+                </p>
+              </div>
 
               <div>
-                <h3 className="text-xl font-semibold tracking-[-0.02em] text-[var(--foreground)]">
-                  {experience.role}
-                </h3>
+                <div className="flex flex-col gap-1">
+                  <h3 className="text-xl font-semibold tracking-[-0.02em] text-[var(--foreground)]">
+                    {experience.role}
+                  </h3>
 
-                <p className="mt-1 text-sm font-medium text-[var(--primary)]">
-                  {experience.organization}
-                </p>
+                  <p className="text-sm font-medium text-[var(--primary)]">
+                    {experience.organization}
+                  </p>
+
+                  <p className="text-xs uppercase tracking-[0.12em] text-[var(--muted)]">
+                    {experience.location}
+                  </p>
+                </div>
 
                 <p className="mt-4 max-w-2xl text-sm leading-7 text-[var(--muted)]">
                   {experience.description}
                 </p>
+
+                <ul className="mt-4 space-y-2">
+                  {experience.highlights.map((highlight) => (
+                    <li
+                      key={highlight}
+                      className="relative pl-4 text-sm leading-7 text-[var(--foreground)]"
+                    >
+                      <span
+                        className="absolute left-0 top-[0.7rem] h-1.5 w-1.5 rounded-full bg-[var(--primary)]"
+                        aria-hidden="true"
+                      />
+                      {highlight}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </article>
           ))}

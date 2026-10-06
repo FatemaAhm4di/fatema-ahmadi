@@ -1,35 +1,57 @@
+import Image from "next/image";
+
 const education = [
   {
     period: "2025 – 2026",
-    title: "Frontend Development",
+    title: "Data Analysis",
+    level: "Associate's Degree",
+    organization: "DataCamp",
+    detail: "Data Analysis & Visualization",
+  },
+  {
+    period: "2025 – 2026",
+    title: "Front-End Development",
+    level: "Certificate",
     organization: "Code to Inspire",
-    description:
-      "Focused on modern frontend development with HTML, CSS, JavaScript, React, TypeScript, Next.js, and responsive web development.",
+    detail: "React · Next.js · TypeScript",
   },
   {
-    period: "2024",
-    title: "UX/UI Design",
-    organization: "Udemy",
-    description:
-      "Studied user interface and user experience principles, visual hierarchy, interaction design, and digital product design.",
-  },
-  {
-    period: "2024",
-    title: "Graphic Design",
-    organization: "Poyot Academy",
-    description:
-      "Developed practical skills in graphic design, visual composition, typography, and digital design.",
+    period: "2025",
+    title: "Web Design",
+    level: "Certificate",
+    organization: "Code to Inspire, Herat",
+    detail: "HTML · CSS · JavaScript",
   },
 ];
 
 const certifications = [
   {
-    title: "Data Analysis Fundamentals",
-    technologies: "Python · SQL · Power BI · Excel",
+    number: "01",
+    title: "UI/UX Design with Figma",
+    organization: "Udemy",
+    detail: "Figma · Sketch",
+    image: "/images/certificates/ui-ux-design-with-figma.png",
   },
   {
+    number: "02",
+    title: "Data Analysis & Visualization",
+    organization: "DataCamp",
+    detail: "Python · SQL · Power BI · Excel",
+    image: "/images/certificates/data-analysis-visualization.png",
+  },
+  {
+    number: "03",
+    title: "Front-end Development",
+    organization: "Code to Inspire",
+    detail: "React · Next.js · TypeScript",
+    image: "/images/certificates/front-end-development.png",
+  },
+  {
+    number: "04",
     title: "Web Design",
-    technologies: "HTML · CSS · JavaScript",
+    organization: "Code to Inspire",
+    detail: "HTML · CSS · JavaScript",
+    image: "/images/certificates/web-design.png",
   },
 ];
 
@@ -44,18 +66,19 @@ export default function Education() {
             </p>
 
             <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-[var(--foreground)] sm:text-4xl">
-              Learning and growth.
+              Education & training.
             </h2>
 
             <p className="mt-5 max-w-sm text-sm leading-7 text-[var(--muted)]">
-              A combination of structured learning, practical development, and
-              continuous exploration across technology and design.
+              My formal training and professional learning across data
+              analysis, frontend development, and web design.
             </p>
           </div>
 
-          <div className="space-y-12">
+          <div className="space-y-14">
+            {/* Education */}
             <div>
-              <div className="mb-6 flex items-center justify-between border-b border-[var(--border)] pb-4">
+              <div className="mb-6 border-b border-[var(--border)] pb-4">
                 <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--foreground)]">
                   Education & Training
                 </h3>
@@ -65,23 +88,29 @@ export default function Education() {
                 {education.map((item) => (
                   <article
                     key={`${item.title}-${item.organization}`}
-                    className="grid gap-4 py-7 sm:grid-cols-[140px_minmax(0,1fr)] sm:gap-8"
+                    className="grid gap-4 py-7 sm:grid-cols-[150px_minmax(0,1fr)] sm:gap-8"
                   >
-                    <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--muted)]">
+                    <p className="text-xs font-medium uppercase tracking-[0.12em] text-[var(--muted)]">
                       {item.period}
                     </p>
 
                     <div>
-                      <h4 className="text-xl font-semibold tracking-[-0.02em] text-[var(--foreground)]">
-                        {item.title}
-                      </h4>
+                      <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+                        <h4 className="text-xl font-semibold tracking-[-0.02em] text-[var(--foreground)]">
+                          {item.title}
+                        </h4>
 
-                      <p className="mt-1 text-sm font-medium text-[var(--primary)]">
+                        <span className="rounded-full border border-[var(--border)] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+                          {item.level}
+                        </span>
+                      </div>
+
+                      <p className="mt-2 text-sm font-medium text-[var(--primary)]">
                         {item.organization}
                       </p>
 
-                      <p className="mt-4 max-w-2xl text-sm leading-7 text-[var(--muted)]">
-                        {item.description}
+                      <p className="mt-3 text-sm leading-6 text-[var(--muted)]">
+                        {item.detail}
                       </p>
                     </div>
                   </article>
@@ -89,22 +118,23 @@ export default function Education() {
               </div>
             </div>
 
+            {/* Certifications */}
             <div>
-              <div className="mb-6 flex items-center justify-between border-b border-[var(--border)] pb-4">
+              <div className="mb-6 border-b border-[var(--border)] pb-4">
                 <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--foreground)]">
-                  Certifications & Skills
+                  Certifications
                 </h3>
               </div>
 
               <div className="grid gap-px overflow-hidden border border-[var(--border)] bg-[var(--border)] sm:grid-cols-2">
-                {certifications.map((item, index) => (
+                {certifications.map((certificate) => (
                   <article
-                    key={item.title}
-                    className="bg-[var(--surface)] p-6 transition-colors duration-200 hover:bg-[var(--background)] sm:p-8"
+                    key={certificate.title}
+                    className="bg-[var(--surface)] p-6 transition-colors duration-200 hover:bg-[var(--background)] sm:p-7"
                   >
                     <div className="flex items-start justify-between gap-4">
                       <span className="text-xs font-medium tabular-nums text-[var(--muted)]">
-                        {String(index + 1).padStart(2, "0")}
+                        {certificate.number}
                       </span>
 
                       <span className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--primary)]">
@@ -112,13 +142,35 @@ export default function Education() {
                       </span>
                     </div>
 
-                    <h4 className="mt-10 text-xl font-semibold tracking-[-0.02em] text-[var(--foreground)]">
-                      {item.title}
-                    </h4>
+                    <div className="mt-6 flex flex-col gap-6 sm:flex-row sm:items-start">
+                      {/* Certificate thumbnail */}
+                      <div className="relative h-24 w-32 shrink-0 overflow-hidden border border-[var(--border)] bg-[var(--surface-muted)]">
+                        <Image
+                          src={certificate.image}
+                          alt={`${certificate.title} certificate`}
+                          fill
+                          sizes="128px"
+                          className="object-cover"
+                        />
+                      </div>
 
-                    <p className="mt-3 text-sm leading-6 text-[var(--muted)]">
-                      {item.technologies}
-                    </p>
+                      {/* Certificate information */}
+                      <div className="min-w-0">
+                        <h4 className="text-xl font-semibold tracking-[-0.02em] text-[var(--foreground)]">
+                          {certificate.title}
+                        </h4>
+
+                        <p className="mt-2 text-sm font-medium text-[var(--primary)]">
+                          {certificate.organization}
+                        </p>
+
+                        {certificate.detail && (
+                          <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                            {certificate.detail}
+                          </p>
+                        )}
+                      </div>
+                    </div>
                   </article>
                 ))}
               </div>
