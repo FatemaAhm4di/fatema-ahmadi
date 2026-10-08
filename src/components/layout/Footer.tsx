@@ -25,18 +25,19 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[var(--border)] bg-[var(--background)]">
-      <div className="mx-auto max-w-7xl px-6 py-14 sm:px-8 sm:py-16 lg:py-20">
-        <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:items-start">
+    <footer className="border-t border-[var(--border)] bg-[var(--footer-background)]">
+      <div className="mx-auto max-w-7xl px-5 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-16">
           <div className="max-w-md">
             <Link
               href="/"
               className="inline-flex items-center text-lg font-semibold tracking-[-0.04em] text-[var(--primary)] transition-opacity duration-200 hover:opacity-75"
+              aria-label="Fatema Ahmadi home"
             >
               FA.
             </Link>
 
-            <h2 className="mt-6 text-3xl font-semibold tracking-[-0.04em] text-[var(--foreground)] sm:text-4xl">
+            <h2 className="mt-6 max-w-xl text-3xl font-semibold leading-tight tracking-[-0.04em] text-[var(--foreground)] sm:text-4xl">
               Let&apos;s build something meaningful.
             </h2>
 
@@ -47,24 +48,28 @@ export default function Footer() {
 
             <a
               href="mailto:fatema.ahmadi1384@gmail.com"
-              className="group mt-6 inline-flex items-center gap-2 text-sm font-medium text-[var(--foreground)] transition-colors duration-200 hover:text-[var(--primary)]"
+              className="group mt-6 inline-flex min-h-10 items-center gap-2 text-sm font-medium text-[var(--foreground)] transition-colors duration-200 hover:text-[var(--primary)]"
             >
               <span>Send me an email</span>
+
               <ArrowUpRight
                 size={15}
                 aria-hidden="true"
-                className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                className="shrink-0 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               />
             </a>
           </div>
 
-          <div className="grid grid-cols-2 gap-x-12 gap-y-10 sm:grid-cols-[auto_auto] sm:gap-x-20">
+          <div className="grid grid-cols-2 gap-10 sm:gap-x-20">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--primary)]">
                 Navigation
               </p>
 
-              <nav className="mt-5 flex flex-col gap-3" aria-label="Footer navigation">
+              <nav
+                className="mt-5 flex flex-col gap-3"
+                aria-label="Footer navigation"
+              >
                 {navigation.map((item) => (
                   <Link
                     key={item.href}
@@ -99,12 +104,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-3 border-t border-[var(--border)] pt-6 sm:mt-16 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-xs text-[var(--muted)]">
+        <div className="mt-12 flex flex-col gap-3 border-t border-[var(--border)] pt-6 sm:mt-16 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+          <p className="text-xs leading-5 text-[var(--muted)]">
             © {new Date().getFullYear()} Fatema Ahmadi. All rights reserved.
           </p>
 
-          <p className="text-xs text-[var(--muted)]">
+          <p className="text-xs leading-5 text-[var(--muted)] sm:text-right">
             Frontend Developer · UI/UX Designer
           </p>
         </div>
